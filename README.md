@@ -12,4 +12,3 @@ repos:
       - id: thoth-advise
         args: ["--recommendation-type", "security"]
 ```
-    
