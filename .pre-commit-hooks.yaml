@@ -1,0 +1,9 @@
+- id: thoth-pre-commit-hook
+  name: Thoth Adviser
+  description: "Manage your Python dependencies with Thoth"
+  entry: thoth-advise
+  language: python
+  minimum_pre_commit_version: 2.9.2
+  require_serial: false
+  files: Pipfile | setup.cfg | requirements.txt
+  verbose: true
