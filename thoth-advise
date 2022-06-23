@@ -1,4 +1,4 @@
 #!/bin/bash
 
 thamos check
-thamos advise $1 $2
+thamos advise $@

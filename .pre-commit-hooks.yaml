@@ -5,5 +5,4 @@
   language: python
   minimum_pre_commit_version: 2.9.2
   require_serial: false
-  files: Pipfile | setup.cfg | requirements.txt
   verbose: true
