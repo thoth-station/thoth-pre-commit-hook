@@ -1,4 +1,4 @@
-# Changelog for Thoth's Template GitHub Project
+# Changelog for Thoth pre-commit hook
 
 ## Release 0.1.0 (2022-06-23T14:39:29)
 * 8eb5d71 Add documentation
