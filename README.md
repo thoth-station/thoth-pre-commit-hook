@@ -10,6 +10,7 @@ Example usage in `.pre-commit-config.yaml`:
 ---
 repos:
   - repo: https://github.com/thoth-station/test-thoth-pre-commit-hook
+    rev: v0.1.0
     hooks:
       - id: thoth-advise
         args: ["--recommendation-type", "security"]
@@ -51,4 +52,23 @@ The list of arguments that can be specified can be found by running [Thamos](htt
  Check Thamos documentation: https://thoth-station.ninja/docs/developers/thamos
 ```
 
+- `recommendation-type`: Thoth recommendation type for the dependency resolution. Recommendation types available are:
+
+  `security`
+  `stable`
+  `latest`
+  `performance`
+  `testing`
+
+See the documentation on recommendation types for more details.
+
+- `runtime-environment`: Runtime environment used for dependency analysis. Thoth can analyze your dependencies against different runtime environments:
+
+  `ubi-8-py-3.8`
+  `rhel-8-py-3.8`
+  `fedora-35-py-3.10`
+  `fedora-34-py-3.9`
+
+
 To be able to run this pre-commit hook, the repository must be configured with a `.thoth.yaml` file as specified in the [Thamos CLI documentation](https://github.com/thoth-station/thamos#using-custom-configuration-file-template).
+The Thoth pre-commit hook generates a `.thoth_last_analysis_id` file in the dependency requirements file directory after the resolution. To avoid committing it, add it to your repository `.gitignore` file.

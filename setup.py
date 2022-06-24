@@ -1,9 +1,8 @@
 """This file sets up the thoth-pre-commit-hook module."""
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 from pathlib import Path
-from setuptools.command.test import test as TestCommand  # noqa
 
 
 def get_install_requires():
@@ -27,15 +26,20 @@ def get_version():
 VERSION = get_version()
 setup(
     name="thoth_pre_commit_hook",
-    entry_points={"console_scripts": ["thamos=thamos.cli:cli"]},
+    entry_points={
+        "console_scripts": ["thoth-advise = thoth_pre_commit_hook.thoth_advise:main"]
+    },
     version=VERSION,
     url="https://github.com/thoth-station/thoth-pre-commit-hook",
-    description="A CLI tool and library for interacting with Thoth",
+    description="Get Thoth recommendations in a pre-commit hook.",
     long_description=Path("README.md").read_text(),
     author="Maya Costantini",
     author_email="mcostant@redhat.com",
     license="GPLv3+",
-    packages=find_packages(),
+    packages=["thoth_pre_commit_hook"],
+    package_dir={
+        "thoth_pre_commit_hook": "./thoth/thoth_pre_commit_hook",
+    },
     long_description_content_type="text/markdown",
     project_urls={
         "Source Code": "https://github.com/thoth-station/thoth-pre-commit-hook/",
