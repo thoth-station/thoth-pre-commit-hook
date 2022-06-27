@@ -1,5 +1,11 @@
 # Changelog for Thoth pre-commit hook
 
+## Release 0.1.1 (2022-06-27T13:16:17)
+* 6f062cd Fix executable not found error
+* 6bea426 Update CHANGELOG.md
+* b4525e6 Update CHANGELOG.md
+* 6c57ec3 Adjust sesheta config
+
 ## Release 0.1.0 (2022-06-23T14:39:29)
 * 8eb5d71 Add documentation
 * 54c2bc3 Initial set up for packaging
