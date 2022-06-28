@@ -17,14 +17,23 @@
 
 """Thoth pre-commit hook entrypoint."""
 
+import os
 import subprocess
 import sys
 
 
 def main():
     """Entrypoint for thoth-pre-commit-hook."""
+    subprocess.run(["thamos", "config"])
     subprocess.run(["thamos", "check"])
-    advise_subprocess = subprocess.run(["thamos", "advise", *sys.argv[1:]])
+
+    # thamos doesn't accept actual paths and that's what pre-commit is passing
+    thamos_args = []
+    for a in sys.argv:
+        if not os.path.exists(a):
+            thamos_args += a
+
+    advise_subprocess = subprocess.run(["thamos", "advise"] + thamos_args)
     return advise_subprocess.returncode
 
 
