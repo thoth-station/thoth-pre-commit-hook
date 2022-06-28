@@ -9,10 +9,10 @@ Example usage in `.pre-commit-config.yaml`:
 ```
 ---
 repos:
-  - repo: https://github.com/thoth-station/test-thoth-pre-commit-hook
     rev: v0.1.0
+  - repo: https://github.com/thoth-station/thoth-pre-commit-hook
     hooks:
-      - id: thoth-advise
+      - id: thoth-pre-commit-hook
         args: ["--recommendation-type", "security"]
 ```
 
