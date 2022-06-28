@@ -60,7 +60,7 @@ The list of arguments that can be specified can be found by running [Thamos](htt
   `performance`
   `testing`
 
-See the documentation on recommendation types for more details.
+See the [documentation on recommendation types](https://thoth-station.ninja/recommendation-types/) for more details.
 
 - `runtime-environment`: Runtime environment used for dependency analysis. Thoth can analyze your dependencies against different runtime environments:
 
