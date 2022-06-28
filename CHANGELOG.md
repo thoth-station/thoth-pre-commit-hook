@@ -1,5 +1,13 @@
 # Changelog for Thoth pre-commit hook
 
+## Release 0.1.2 (2022-06-28T15:00:52)
+* 501b5ca Update OWNERS
+* 5649fb5 run `thamos config` before running advise
+* a5a115d do not pass file arguments from pre-commit to thanos
+* 8d3651d readme: pin example usage to 0.1.1
+* 2e8d291 readme: fix example usage
+* 02349fd Add link to recommendation types doc
+
 ## Release 0.1.1 (2022-06-27T13:16:17)
 * 6f062cd Fix executable not found error
 * 6bea426 Update CHANGELOG.md
