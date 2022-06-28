@@ -18,7 +18,6 @@ managers:
   - name: version
     configuration:
       maintainers:
-        - fridex
         - goern
         - harshad16
         - mayaCostantini
