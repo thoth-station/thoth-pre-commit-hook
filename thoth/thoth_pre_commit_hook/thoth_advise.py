@@ -24,7 +24,7 @@ import sys
 
 def main():
     """Entrypoint for thoth-pre-commit-hook."""
-    subprocess.run(["thamos", "config"])
+    subprocess.run(["thamos", "config", "--no-interactive"])
     subprocess.run(["thamos", "check"])
 
     # thamos doesn't accept actual paths and that's what pre-commit is passing
