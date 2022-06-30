@@ -20,4 +20,4 @@
 
 
 __title__ = "thoth-pre-commit-hook"
-__version__ = "0.1.2"
+__version__ = "0.1.3"

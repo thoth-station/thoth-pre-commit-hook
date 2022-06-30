@@ -1,5 +1,9 @@
 # Changelog for Thoth pre-commit hook
 
+## Release 0.1.3 (2022-06-30T13:57:08)
+* ec7c5e3 run thamos config non interactively
+* c958665 Update README.md
+
 ## Release 0.1.2 (2022-06-28T15:00:52)
 * 501b5ca Update OWNERS
 * 5649fb5 run `thamos config` before running advise
