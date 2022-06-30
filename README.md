@@ -10,7 +10,7 @@ Example usage in `.pre-commit-config.yaml`:
 ---
 repos:
   - repo: https://github.com/thoth-station/thoth-pre-commit-hook
-    rev: v0.1.1
+    rev: v0.1.2
     hooks:
       - id: thoth-pre-commit-hook
         args: ["--recommendation-type", "security"]
