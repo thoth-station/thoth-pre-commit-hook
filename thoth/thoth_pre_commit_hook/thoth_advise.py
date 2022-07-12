@@ -27,11 +27,7 @@ def main():
     subprocess.run(["thamos", "config", "--no-interactive"])
     subprocess.run(["thamos", "check"])
 
-    # thamos doesn't accept actual paths and that's what pre-commit is passing
-    thamos_args = []
-    for a in sys.argv:
-        if not os.path.exists(a):
-            thamos_args += a
+    thamos_args = sys.argv[1:]
 
     advise_subprocess = subprocess.run(["thamos", "advise"] + thamos_args)
     return advise_subprocess.returncode
