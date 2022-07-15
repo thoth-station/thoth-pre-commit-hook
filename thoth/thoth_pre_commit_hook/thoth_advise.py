@@ -17,7 +17,7 @@
 
 """Thoth pre-commit hook entrypoint."""
 
-import os
+import re
 import subprocess
 import sys
 
@@ -27,13 +27,21 @@ def main():
     subprocess.run(["thamos", "config", "--no-interactive"])
     subprocess.run(["thamos", "check"])
 
-    # thamos doesn't accept actual paths and that's what pre-commit is passing
-    thamos_args = []
-    for a in sys.argv:
-        if not os.path.exists(a):
-            thamos_args += a
+    thamos_args = sys.argv[1:]
 
-    advise_subprocess = subprocess.run(["thamos", "advise"] + thamos_args)
+    advise_subprocess = subprocess.run(
+        ["thamos", "advise"] + thamos_args, stdout=subprocess.PIPE
+    )
+    stdout = advise_subprocess.stdout.decode(sys.getdefaultencoding())
+    # let's print advise's output to the console nevertheless
+    print(stdout)
+    try:
+        advise_id = re.findall(r"adviser-\w+-\w+", stdout)[0]
+    except IndexError:
+        advise_id = None
+
+    if advise_id:
+        print(f"Advise output: https://thoth-station.ninja/search/advise/{advise_id}/")
     return advise_subprocess.returncode
 
 
