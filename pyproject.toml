@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thoth_pre_commit_hook"
+description = "Get Thoth recommendations in a pre-commit hook."
+authors = [
+    { name = "Maya Costantini", email = "mcostant@redhat.com" }
+]
+license = { text = "GPLv3+" }
+dynamic = [ "version", "dependencies" ]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/thoth-station/thoth-pre-commit-hook"
+"Source Code" = "https://github.com/thoth-station/thoth-pre-commit-hook/"
+Issues = "https://github.com/thoth-station/thoth-pre-commit-hook/issues"
+Changelog = "https://github.com/thoth-station/thoth-pre-commit-hook/blob/master/CHANGELOG.md"
+
+[project.scripts]
+thoth-advise = "thoth_pre_commit_hook.thoth_advise:main"
+
+[tool.setuptools]
+zip-safe = false
+packages = ["thoth_pre_commit_hook"]
+
+[tool.setuptools.dynamic]
+version = {attr = "thoth.thoth_pre_commit_hook.__version__"}
+dependencies = { file = ["requirements.txt"] }
